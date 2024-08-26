@@ -6,9 +6,36 @@ import { link } from "fs";
 import { Link } from "react-router-dom";
 
 
-const pages = [
-    'Home', 
-    'Netflix', 'User Management','Todos','Products','About'];
+const menuList = [
+    { id: 1, 
+      title: "Home", 
+      url: "/" },
+    {
+      id: 2,
+      title: "Netflix",
+      url: "/netflix",
+    },
+    {
+      id: 3,
+      title: "User Management",
+      url: "/users",
+    },
+    {
+      id: 4,
+      title: "Todos",
+      url: "/todos",
+    },
+    {
+      id: 5,
+      title: "Products",
+      url: "/products",
+    },
+    {
+      id: 6,
+      title: "About",
+      url: "/about",
+    },
+  ];
 
 //Named functionn 
 function Header() {
@@ -74,9 +101,9 @@ function Header() {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                            {menuList.map((menu) => (
+                                <MenuItem key={menu.id} onClick={handleCloseNavMenu}>
+                                <Typography textAlign="center">{menu.title}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -101,14 +128,13 @@ function Header() {
                         MyBigApp
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Link to={`/${page}`}>
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
+                    {menuList.map((menu) => (
+                        <Link to={menu.url} key={menu.id}>
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: "white", display: "block" }}
+                        >
+                        {menu.title}
                             </Button>
                             </Link>
                         ))}
