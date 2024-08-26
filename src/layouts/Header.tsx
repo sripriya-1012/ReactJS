@@ -6,9 +6,11 @@ import { link } from "fs";
 import { Link } from "react-router-dom";
 
 
-const pages = ['Home', 'Netflix', 'User Management','Todos','Products','About'];
+const pages = [
+    'Home', 
+    'Netflix', 'User Management','Todos','Products','About'];
 
-//Named function
+//Named functionn 
 function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
