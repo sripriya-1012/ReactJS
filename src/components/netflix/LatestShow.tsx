@@ -1,0 +1,56 @@
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  IconButton,
+  Typography,
+} from "@mui/material";
+
+interface LatestShowProps {
+  title: string;
+  category: string;
+  thumbnail: string;
+  children: React.ReactNode;
+}
+
+const LatestShow = (props: LatestShowProps) => {
+  console.log(props);
+
+  /*
+   * props are objects
+   * props can have children
+   * props used for receiving data from parent component
+   * props are read-only
+   */
+
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardHeader title={props.title} subheader={props.category} />
+      <CardMedia
+        component="img"
+        height="194"
+        image={props.thumbnail}
+        alt={props.title}
+      />
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          {props.children}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+      </CardActions>
+    </Card>
+  );
+};
+
+export default LatestShow;
