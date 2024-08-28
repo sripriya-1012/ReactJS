@@ -19,16 +19,3 @@ const Footer = function () {
 export default Footer;
 
 
-// // Anonymous function
-// const Footer = function(){
-//     return(
-//         <Box>
-//             <Divider/>
-//             <Typography variant="body1" gutterBottom>
-//                 Copyright | 2024 | Sri
-//             </Typography>
-//         </Box>
-//     );
-// };
-
-// export default Footer;
