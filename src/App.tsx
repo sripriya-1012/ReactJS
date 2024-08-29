@@ -22,6 +22,7 @@ import NetflixPage from './pages/NetflixPage';
 import UsersPage from './pages/UsersPage';
 import TodosPage from './pages/TodosPage';
 import ProductPage from './pages/ProductPage';
+import CreateUser from './components/users/CreateUser';
 
 function App() { //parent component
   return (
@@ -34,6 +35,7 @@ function App() { //parent component
         <Route path='/' element={<HomePage/>}/>
         <Route path='/netflix' element={<NetflixPage/>}/>
         <Route path='/users' element={<UsersPage/>}/>
+        <Route path="/users/create" element={<CreateUser />} />
         <Route path='/todos' element={<TodosPage/>}/>
         <Route path='/product' element={<ProductPage/>}/>
         <Route path='/about' element={<AboutPage/>}/>

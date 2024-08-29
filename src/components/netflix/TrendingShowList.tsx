@@ -9,7 +9,7 @@ const TrendingShowList = () => {
     * use the setter function to update state
   */
   const [resolution, setResolution] = useState("HD");
-  const [shows, setShows] = useState([
+  const [shows] = useState([
     {
       title: "Game of Thrones",
       category: "Drama",
@@ -18,11 +18,11 @@ const TrendingShowList = () => {
       description: "Game of Thrones is an epic fantasy series.",
     },
     {
-      title: "The Shawshank Redemption",
+      title: "The Shawshank...",
       category: "Drama",
       thumbnail:
         "https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
-      description: "The Shawshank Redemption, released in 1994, is a drama film directed by Frank Darabont.",
+      description: "The Shawshank Redemption is a drama film, released in 1994.",
     },
   ]); 
 
