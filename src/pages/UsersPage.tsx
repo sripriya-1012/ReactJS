@@ -31,28 +31,44 @@ const UsersPage = () => {
   // 2. What is the HTTP method? GET
   // 3. What is the REST API Client? npm i axios
 
+  // useEffect -> react hook to connect to backend and get data. 
+  // takes two parameters-function and array(can be empty)
+
   useEffect(() => {
     console.log("Inside UseEffect");
     // ideal place to fetch data from the backend
+    // this callback fn will be called after first render. 
+    // First UI is painted only then function gets called.
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
         // success
+        // console.log(response);
         console.log("Successful Response");
         setIsLoading(false);
         setUsers(response.data);
         console.log(response.data);
+        // We are updating the state 2 times (setIsLoading and setUsers) 
+        // React uses batch processing to update all states at once 
+        // Search for Automatic batch processing in react
+        // Dont use ';' its for ending statement. And use '.' for chaining
       })
       .catch((error) => {
         // error
         console.log("Error Response");
         console.log(error);
+        setIsError(true);
       })
       .finally(() => {
         // finally
         console.log("It is over");
+        setIsLoading(false);
       });
-  }, []);
+  }, [] 
+  // Empty array is a dependency array. 
+  // Empty array means it will run only once
+  // If something is given, it would run long(infinite somethings if value isn't proper)
+);
 
   console.log("Program Ended");
   return (
@@ -144,6 +160,7 @@ const UsersPage = () => {
           {users?.map((user: IUser) => {
             return (
               <Grid item xs={12} sm={6} md={4} lg={3} key={user.id}>
+              {/* keep the key in the first tag after map*/}
                 <Card variant="outlined">
                   <CardContent>
                     <Typography
