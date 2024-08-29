@@ -143,7 +143,7 @@ const UsersPage = () => {
         <Grid container spacing={2}>
           {users?.map((user: IUser) => {
             return (
-              <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Grid item xs={12} sm={6} md={4} lg={3} key={user.id}>
                 <Card variant="outlined">
                   <CardContent>
                     <Typography
