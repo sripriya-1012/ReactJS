@@ -12,9 +12,14 @@
   * must be exported
 */
 //fucntional component with named function. Function component name and file name must be same. eg: function App1() and App1.tsx
-import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import { BrowserRouter,Route,Routes } from 'react-router-dom'; //node module imports
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
 import './App.css';
-import Footer from './layouts/Footer';
+import Footer from './layouts/Footer'; // custom imports for local files
 import Header from './layouts/Header';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -23,11 +28,15 @@ import UsersPage from './pages/UsersPage';
 import TodosPage from './pages/TodosPage';
 import ProductPage from './pages/ProductPage';
 import CreateUser from './components/users/CreateUser';
+import UserDetails from './components/users/UserDetails';
+
+const queryClient = new QueryClient();
 
 function App() { //parent component
   return (
 
     <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
       <Header/> 
 
       {/*Configuring routes */}
@@ -36,12 +45,14 @@ function App() { //parent component
         <Route path='/netflix' element={<NetflixPage/>}/>
         <Route path='/users' element={<UsersPage/>}/>
         <Route path="/users/create" element={<CreateUser />} />
+        <Route path="/users/:id" element={<UserDetails />} />
         <Route path='/todos' element={<TodosPage/>}/>
         <Route path='/product' element={<ProductPage/>}/>
         <Route path='/about' element={<AboutPage/>}/>
       </Routes>
 
       <Footer/>
+      </QueryClientProvider>
     </BrowserRouter>
   );
 }

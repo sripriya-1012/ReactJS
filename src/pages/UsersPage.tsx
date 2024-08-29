@@ -177,7 +177,7 @@ const UsersPage = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" href="/users/1">
+                    <Button size="small" href={`/users/${user.id}`}>
                       View More
                     </Button>
                   </CardActions>
