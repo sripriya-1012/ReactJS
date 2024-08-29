@@ -128,7 +128,7 @@ function Header() {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                     {menuList.map((menu) => (
-                        <Link to={menu.url} key={menu.id}>
+                        <Link to={menu.url} key={menu.id} style={{ textDecoration: 'none' }}>
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: "white", display: "block" }}

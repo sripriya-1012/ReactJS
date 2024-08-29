@@ -41,7 +41,7 @@ const UsersPage = () => {
     // First UI is painted only then function gets called.
     axios
       .get("https://jsonplaceholder.typicode.com/users")
-      .then((response) => {
+      .then((response: any) => {
         // success
         // console.log(response);
         console.log("Successful Response");
@@ -64,11 +64,11 @@ const UsersPage = () => {
         console.log("It is over");
         setIsLoading(false);
       });
-  }, [] 
-  // Empty array is a dependency array. 
-  // Empty array means it will run only once
-  // If something is given, it would run long(infinite somethings if value isn't proper)
-);
+  }, []
+    // Empty array is a dependency array. 
+    // Empty array means it will run only once
+    // If something is given, it would run long(infinite somethings if value isn't proper)
+  );
 
   console.log("Program Ended");
   return (
@@ -160,7 +160,7 @@ const UsersPage = () => {
           {users?.map((user: IUser) => {
             return (
               <Grid item xs={12} sm={6} md={4} lg={3} key={user.id}>
-              {/* keep the key in the first tag after map*/}
+                {/* keep the key in the first tag after map*/}
                 <Card variant="outlined">
                   <CardContent>
                     <Typography
