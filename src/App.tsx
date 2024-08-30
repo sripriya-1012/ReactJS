@@ -15,8 +15,7 @@
 import { BrowserRouter,Route,Routes } from 'react-router-dom'; //node module imports
 import {
   QueryClient,
-  QueryClientProvider,
-  useQuery,
+  QueryClientProvider
 } from '@tanstack/react-query'
 import './App.css';
 import Footer from './layouts/Footer'; // custom imports for local files
@@ -35,8 +34,9 @@ const queryClient = new QueryClient();
 function App() { //parent component
   return (
 
-    <BrowserRouter>
+   
     <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
       <Header/> 
 
       {/*Configuring routes */}
@@ -52,8 +52,8 @@ function App() { //parent component
       </Routes>
 
       <Footer/>
+      </BrowserRouter>
       </QueryClientProvider>
-    </BrowserRouter>
   );
 }
 
