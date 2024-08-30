@@ -54,7 +54,7 @@ const UserDetails = () => {
   console.log(id);
 
   const { isLoading, isError, data: user, error } = useQuery({
-    queryKey: ['userDetails',id], //taking id in useQuery hook
+    queryKey: ['userDetails',id], //Dont use same name as the const. Taking id in useQuery hook. 
     queryFn: () => fetchUserDetails(id), //passing id to fetchUserDetails from useParams
   });
 

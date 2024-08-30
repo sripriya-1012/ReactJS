@@ -28,17 +28,16 @@ import TodosPage from './pages/TodosPage';
 import ProductPage from './pages/ProductPage';
 import CreateUser from './components/users/CreateUser';
 import UserDetails from './components/users/UserDetails';
+import { ErrorBoundary } from 'react-error-boundary';
 
 const queryClient = new QueryClient();
 
 function App() { //parent component
   return (
-
-   
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
       <Header/> 
-
+      <ErrorBoundary fallback={<h1>Something went wrong. Please notify Admins</h1>}>
       {/*Configuring routes */}
       <Routes>
         <Route path='/' element={<HomePage/>}/>
@@ -50,7 +49,7 @@ function App() { //parent component
         <Route path='/product' element={<ProductPage/>}/>
         <Route path='/about' element={<AboutPage/>}/>
       </Routes>
-
+      </ErrorBoundary>
       <Footer/>
       </BrowserRouter>
       </QueryClientProvider>
