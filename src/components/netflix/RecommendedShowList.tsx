@@ -1,8 +1,9 @@
-//child
+//parent
 import { Alert, Box, Grid } from "@mui/material";
 import RecommendedShow from "./RecommendedShow";
 import { useState } from "react";
-
+// This pattern allows the child component to communicate user actions back to the parent component, 
+// enabling the parent to manage the state and update the UI accordingly.
 const RecommendedShowList = () => {
     const [shows, setShows] = useState([
         {
@@ -31,7 +32,8 @@ const RecommendedShowList = () => {
         }
     ]);
 
-    const handleManageFavorites = (id: number) => {
+    //function is defined in the parent component
+    const handleManageFavorites = (id: number) => { //Passes down the show details and the handleManageFavorites function to each RecommendedShow component.
         console.log("Clicked Manage Favorites " + id);
         const updatedShows = shows.map(show =>
             show.id === id ? { ...show, isFavorite: !show.isFavorite } : show
@@ -51,6 +53,7 @@ const RecommendedShowList = () => {
             <Grid container spacing={2}>
                 {shows.map(show => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={show.id}>
+                        {/* The parent component receives this call, updates the state accordingly, and re-renders the list of shows with the updated favorite status. */}
                         <RecommendedShow
                             {...show}
                             handleManageFavorites={handleManageFavorites}
@@ -63,3 +66,5 @@ const RecommendedShowList = () => {
 };
 
 export default RecommendedShowList;
+
+

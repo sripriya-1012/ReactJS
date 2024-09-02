@@ -1,4 +1,4 @@
-//parent
+//child
 
 import {
   Card,
@@ -13,6 +13,7 @@ import { pink } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 
+//Receives props from the parent, including the show details and the handleManageFavorites function.
 interface RecommendedShowProps {
   id: number;
   title: string;
@@ -20,7 +21,7 @@ interface RecommendedShowProps {
   thumbnail: string;
   description: string;
   isFavorite: boolean;
-  handleManageFavorites: (id: number) => void;
+  handleManageFavorites: (id: number) => void;//function is passed as a prop to the child component
 }
 
 const RecommendedShow = (props: RecommendedShowProps) => {
@@ -41,6 +42,7 @@ const RecommendedShow = (props: RecommendedShowProps) => {
           <CardActions disableSpacing>
               <IconButton
                   aria-label="add to favorites"
+                  // When the user clicks the “add to favorites” button in the child component, it calls the handleManageFavorites function with the show’s id as an argument.
                   onClick={() => props.handleManageFavorites(props.id)}
               >
                   {/* Conditional Rendering inside JSX */}
