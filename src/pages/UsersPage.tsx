@@ -13,6 +13,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 interface IUser {
   id: number;
@@ -72,6 +73,7 @@ const UsersPage = () => {
 
   console.log("Program Ended");
   return (
+    
     <Box
       id="hero"
       sx={(theme) => ({
@@ -85,6 +87,9 @@ const UsersPage = () => {
         }),
       })}
     >
+       <Helmet>
+      <title>Users Page</title>
+      </Helmet>
       <Container
         sx={{
           display: "flex",

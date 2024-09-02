@@ -1,5 +1,6 @@
 import { Container } from "@mui/material";
 import { useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const AboutPage = () => {
   const [name, setName] = useState("");// form with controlled components
@@ -20,6 +21,9 @@ const AboutPage = () => {
 
   return (
     <Container>
+       <Helmet>
+        <title>About Page</title>
+      </Helmet>
       <h1>About Page</h1>
       <p>Controlled Components - Demo</p>
       <div>
