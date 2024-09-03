@@ -17,7 +17,9 @@ const UsersPage = lazy(() => import("../pages/UsersPage"));
 
 const MainRoutes = () => {
   return (
-    <Suspense fallback={<h1>Loading...</h1>}>
+    <Suspense 
+    fallback={<h1>Loading...</h1>}
+    >
     <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/netflix" element={<NetflixPage />} />
