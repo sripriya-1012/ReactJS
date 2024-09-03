@@ -1,0 +1,9 @@
+1. Implement Page title react-helmet-async -done
+2. Setup Active Menu - done
+3. Implement Page Not Found - done
+4. Implement Manage Favorite  by passing id from the child component -- 
+in RecommendedShow to RecommendedShowList - done
+5. Implement Loading State and error state in CreateUser using react-toastify - done
+6. Form Validation in CreateUser using react-hook-form - done
+7. Pass the url param id to fetch api in UserDetails - done
+8. Implement Add todo in Todos - done
