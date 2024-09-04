@@ -1,3 +1,522 @@
+https://jsbin.com/hobozam/edit?html,css,output
+https://jsbin.com/suwequk/edit?html,css,output
+https://jsbin.com/zefoted/edit?html,css,output
+
+Webapps 
+===
+  1. Server Side Rendering (traditional)
+      * Pages will refresh 
+
+      1 Server
+      Codebase: Frontend + backend + db query (mixed)
+      Response: HTML, CSS, JS + Data 
+  
+  2. Client Side Rendering (Modern)
+      * Pages will NOT refresh
+
+	Disadvantages 
+	=====
+	1. Initial Loading will take longer ( you can fix it lazy loading of component)
+	2. NOT Search engine friendly ( you can fix it lazy loading of component)
+
+      2 Servers (1 Front end app server, 1 Backend app Server) 
+      codebase: 1 Front End App (SPA) + 1 Back End App (RESTful API)
+      Response (from front end server): HTML, CSS, JS 
+      Response (from Back end server): Data (JSON)
+
+
+  Single Page App (SPA)
+  ========
+    7 Characteristics 
+    --------
+      1. Page should NOT Refresh
+      2. URL should change 
+      3. Browser History should be maintained w/o page refresh
+      4. Header, Footer, Sidebar should Not be loaded again and again 
+      5. Main section should be contextually updated
+      6. Active Menu must be set 
+      7. Page Title should also be changed 
+
+      
+    SPA Frameworks / Libraries 
+    ==============
+      #1. ReactJS (Library)
+      #2. VueJS (Framework)
+      #3. Angualar (Framework)
+
+      
+
+Browser 
+----
+  1. HTML Renderer 
+  2. CSS Parser 
+  3. JS Engine 
+
+	HTML
+===
+  1. Block level elements
+      occupy the entire row 
+
+      header, footer, div, main, aside 
+
+  2. Inline elements
+      will let another inline element to appear in the same row 
+
+      span 
+
+
+=====
+CSS
+---
+
+
+    
+CSS 
+====
+  * cascading style sheet 
+  * 3 ways to write css 
+    * inline css 
+    * internal css 
+    * external css 
+
+  * syntax 
+    
+    selector {
+      /* style definition */
+      property: value; 
+    }
+
+  * types of selectors 
+    1. element selector
+    2. id selector
+    3. class selector
+    4. attribute selector 
+    5. psuedo selector 
+
+  
+  Units of CSS 
+  ---
+    em, px, %, 
+
+  Media Query 
+
+
+JS 
+====
+  1995 
+
+
+ECMAScript 
+===
+  1997 
+  * standard 
+  * grammar 
+  * implementations: 
+      JavaScript, ActionScript, QtScript, Google AppsScript 
+
+  * before 2015
+  ----  
+    * JS was NOT Object oriented 
+
+  * after  2015 (ES)
+  ----  
+    * JS has become Object oriented language
+    * support for class, import, export
+
+
+ECMAScript 2015
+=====
+
+
+2 Types of languages based on Data typing 
+===
+  1. Strongly-Typed / Strictly-typed languages / Statically typed languages
+      Examples: Java, C#, TS 
+
+      Syntax: 
+        String myName = "Arun";
+        myName = 1435367; // compilation error 
+        
+
+
+  2. Loosely-typed / Dynamically typed languages
+      Examples: JavaScript, Python, PHP 
+
+      Syntax in JS 
+      ===
+        var x = "Arun";
+        x = 100;
+        x = true; 
+        x = undefined;
+        x = null;
+        x = [];
+        x = {};
+        x = function() {
+          
+        }
+
+
+Datatypes:
+===
+  1. Primitive Datatypes 
+      string, number, boolean, undefined, null, symbol (es2015), bigint(es2017)
+
+  2. Non-Primitive Datatypes aka reference types 
+      object, array, regex 
+
+
+TypeScript 
+======
+  * TS = JS + Data Typing 
+  * TS is a superset of JS 
+
+  Syntax of TS 
+  ====
+    1. Explicit Datatyping 
+        var x: number = 10;
+        x = true; // compilation error 
+
+        var myName: string = "Arun";
+        var isLoggedIn: boolean = true;
+        var u: undefined;
+        var n: null = null;
+        
+        var colors: string[]  = ["red", "green", "blue"];
+        var colors: Array<string>  = ["red", "green", "blue"];
+
+
+    2. Implicit Datatyping / Type Inference
+        var y = 10;  
+        y = true; // compilation error 
+
+
+// custom type with type keyword 
+type Address = {
+    doorNo: number
+}
+
+type User = {
+    name: string,
+    phone: string | number,
+    email: string,
+    city?: string | number
+    address: Address
+}
+
+var profile1: User = {
+    name: "John",
+    phone: 12536457,
+    email: "j@k.com",
+    address: {
+        doorNo: 32456785
+    }
+}
+
+var profile2: User = {
+    name: "Steve",
+    phone: 3546789607,
+    email: "s@t.com",
+    address: {
+        doorNo: 67890
+    }
+}
+
+
+
+
+
+=====
+JS Examples
+===
+https://jsbin.com/yavefef/edit?js,console
+https://jsbin.com/lisipuv/edit?js,console
+https://jsbin.com/yewulag/edit?js,console
+
+https://jsbin.com/fubudoj/edit?js,console
+https://jsbin.com/tolowez/edit?js,console
+https://jsbin.com/qonicuk/edit?js,console
+https://jsbin.com/tolowez/edit?js,console
+https://jsbin.com/yopalah/edit?js,console
+
+https://jsbin.com/lokiyub/edit?js,console
+
+
+
+TODO: Learn about limitations of arrow functions
+TODO: learn about the difference between type and interface in TS 
+TODO: learn about intersection types and conditional types 
+
+
+
+2 Types of languages based on Data typing 
+===
+  1. Strongly-Typed / Strictly-typed languages / Statically typed languages
+      Examples: Java, C#, TS 
+
+      Syntax: 
+        String myName = "Arun";
+        myName = 1435367; // compilation error 
+        
+
+
+  2. Loosely-typed / Dynamically typed languages
+      Examples: JavaScript, Python, PHP 
+
+      Syntax in JS 
+      ===
+        var x = "Arun";
+        x = 100;
+        x = true; 
+        x = undefined;
+        x = null;
+        x = [];
+        x = {};
+        x = function() {
+          
+        }
+
+
+Datatypes:
+===
+  1. Primitive Datatypes 
+      string, number, boolean, undefined, null, symbol (es2015), bigint(es2017)
+
+  2. Non-Primitive Datatypes aka reference types 
+      object, array, regex 
+
+
+TypeScript 
+======
+  * TS = JS + Data Typing 
+  * TS is a superset of JS 
+
+  Syntax of TS 
+  ====
+    1. Explicit Datatyping 
+        var x: number = 10;
+        x = true; // compilation error 
+
+        var myName: string = "Arun";
+        var isLoggedIn: boolean = true;
+        var u: undefined;
+        var n: null = null;
+        
+        var colors: string[]  = ["red", "green", "blue"];
+        var colors: Array<string>  = ["red", "green", "blue"];
+
+
+    2. Implicit Datatyping / Type Inference
+        var y = 10;  
+        y = true; // compilation error 
+
+
+// custom type with type keyword 
+type Address = {
+    doorNo: number
+}
+
+type User = {
+    name: string,
+    phone: string | number,
+    email: string,
+    city?: string | number
+    address: Address
+}
+
+var profile1: User = {
+    name: "John",
+    phone: 12536457,
+    email: "j@k.com",
+    address: {
+        doorNo: 32456785
+    }
+}
+
+var profile2: User = {
+    name: "Steve",
+    phone: 3546789607,
+    email: "s@t.com",
+    address: {
+        doorNo: 67890
+    }
+}
+
+
+// functions
+function add(a: number, b: number): number {
+    return a + b;
+}
+
+
+
+==========
+
+
+
+Naming Conventions & Casing 
+----
+  Casing Types 
+  --------
+    1. PascalCase 
+        * Recommended for Object Oriented Program's classes 
+        * also Recommended for Interface in TypeScript 
+        * Recommended for React Components and the folder of Components
+
+        examples 
+        ---
+          class CarDetails {
+
+          }
+
+          interface Employee {
+
+          }
+
+    2. camelCase 
+        * Recommended for variables, let, const, functions, methods in JS & TS 
+        * Recommended for id's of html elements 
+        * Recommended for variables, const, fn, methods, event handlers of React Component
+        
+        examples 
+        -----
+          var myCar = 'BMW';
+          var isLoggedIn = true;
+
+          function getCarInfo() {
+            //....
+          }
+    
+    3. kebab-case
+        * Recommended for URLs 
+        * Recommended for file names, folder names, assets in front end projects  
+        * Recommended for css classes 
+        * okay for id's of html elements if your architect says ok
+
+        examples 
+        -----
+          btn-primary
+          slideshow-container 
+          youtube-logo.png 
+
+    4. snake_case 
+        * never ever use this. 
+        * okay for const in JS & TS if architect accepts
+
+        examples
+        ---
+          const MAX_STUDENTS_PER_CLASS = 30;
+
+----------------
+
+
+
+3 players in Android ecosystem 
+---
+  1. Mobile App Developers 
+  2. Marketplace (Hosting platform: Google Play)
+      * Install 
+      * update
+      * uninstall 
+  3. Users 
+
+3 players in Front End app ecosystem 
+---
+  1. Node Package Developers 
+  2. Marketplace (Hosting platform: npmjs.com)
+      * Install packages 
+      * update packages
+      * uninstall packages
+
+  3. Front End Developers  
+
+
+==== 
+NPM Packages 
+===
+  1. Project Dependencies 
+      * some packages are needed for the app's functionality to work.
+
+      example: dropzone, datatables, bootstrap, tailwindcss, react, angular
+
+      Commands 
+      ----
+        npm i dropzone 
+        npm i --save dropzone 
+        npm i -S dropzone 
+        npm install -S dropzone 
+
+        npm update dropzone
+        npm uninstall dropzone
+        
+
+  2. Development Dependencies 
+      * some packages are needed for the app to be developed
+
+      examples: gulp, grunt, webpack, vite, browserify, turbo, nodemon, jest, jasmine, karma , sass, typescript
+
+      Commands 
+      ----
+        npm i webpack --save-dev 
+        npm i webpack -D 
+
+        npm update webpack -D 
+        npm uninstall webpack -D 
+
+
+  3. Global Dependencies 
+      * some packages are needed to be installed in your computer not within the project folder
+
+      Commands 
+      ---
+        npm i sass -g 
+        npm i sass --global 
+
+  4. Peer Dependencies 
+
+TODO: learn about npm prune 
+
+
+
+React App with TS and Webpack 
+----
+
+Setup MUI
+==
+npm install @mui/material @emotion/react @emotion/styled
+npm install @fontsource/roboto @mui/icons-material
+npm install react-router-dom
+
+
+the following should be pasted in index.tsx 
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+
+PRoject Repo Link: https://github.com/arunprabu/my-big-app-ford
+
+Pretest: https://forms.office.com/r/bXi2LNvY4K
+
+
+  
+https://bareynol.github.io/mui-theme-creator/
+
+
+
+====
+https://github.com/arunprabu/my-big-app-ford
+=====
+
+HTTP Methods in REST API with React Query
+====
+  useQuery hook from react-query
+    load users -- GET 
+  
+  useMutation hook from react-query
+    create user -- POST 
+    update user -- PUT / PATCH
+    delete user -- DELETE
 
 Netflix (4 hours)
   Props [DONE]
